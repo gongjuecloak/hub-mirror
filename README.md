@@ -1,14 +1,12 @@
-<img src="https://user-images.githubusercontent.com/55381228/221747734-13783ce6-1969-4c10-acd6-833f5046aa85.png" width="300px">
-
 ## hub-mirror
 
 使用国内镜像仓库来提供（但不限于） docker.io、gcr.io、registry.k8s.io、k8s.gcr.io、quay.io、ghcr.io 等国外镜像加速下载服务
 
-示例：https://github.com/togettoyou/hub-mirror/issues/2816
+示例：https://github.com/gongjuecloak/hub-mirror/issues/2
 
 ## 试用
 
-[直接在我的项目中提交 issues ](https://github.com/togettoyou/hub-mirror/issues/new/choose)，按照 issue 模板修改内容即可
+[直接在我的项目中提交 issues ](https://github.com/gongjuecloak/hub-mirror/issues/new/choose)，按照 issue 模板修改内容即可
 
 > 个人配置的是阿里云个人实例镜像仓库，仓库限额为 300 ，所以有可能出现上传或拉取失败的情况（本人会不定时清理历史仓库
 
