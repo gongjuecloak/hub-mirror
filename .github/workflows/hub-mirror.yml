@@ -53,7 +53,19 @@ jobs:
               repo: context.repo.repo,
               labels: ['success']
             })
-      # 6. 当以上步骤失败时，为 issues 添加 failure 标签，并为其添加失败原因评论
+      # 6. 在 success() 的情况下自动关闭 issue。这个步骤在成功完成所有之前的步骤后执行
+      - name: Close issue
+        if: ${{ success() }}
+        uses: actions/github-script@v5
+        with:
+          script: |
+            github.rest.issues.update({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed'
+            })
+      # 7. 当以上步骤失败时，为 issues 添加 failure 标签，并为其添加失败原因评论
       - name: Failure issues
         if: ${{ failure() }}
         uses: actions/github-script@v5
