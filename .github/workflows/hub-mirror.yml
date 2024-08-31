@@ -53,7 +53,10 @@ jobs:
               repo: context.repo.repo,
               labels: ['success']
             })
-      # 6. 在 success() 的情况下自动关闭 issue。这个步骤在成功完成所有之前的步骤后执行
+      # 6. 在 success() 的情况下等待10分钟自动关闭 issue。这个步骤在成功完成所有之前的步骤后执行
+      - name: Wait for 10 minutes
+        if: ${{ success() }}
+        run: sleep 600
       - name: Close issue
         if: ${{ success() }}
         uses: actions/github-script@v5
